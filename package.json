@@ -1,0 +1,40 @@
+{
+  "name": "alapa-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "webpack": "tsc  --project tsconfig.public.json && webpack --mode=development",
+    "build:css": "./node_modules/.bin/postcss public/styles/tailwind.css -o static/css/app.css",
+    "ts-node": "ts-node --project tsconfig.json src/index.ts",
+    "start": "node dist/index.js",
+    "build": "npm run build:css && npm run webpack && npm run tsc",
+    "lint": "eslint src/**/*.ts",
+    "dev:public": "nodemon --watch public --delay  2.5 --exec 'npm run webpack'",
+    "dev:app": "nodemon --watch src --ext 'ts'  --delay 2.5 --exec 'npm run tsc && npm start'",
+    "dev:view": "nodemon --watch views --ext '*' --delay 2.5 --exec 'npm run build:css'",
+    "dev": "NODE_ENV=development npm-run-all --parallel dev:app dev:public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/connect-flash": "^0.0.40",
+    "autoprefixer": "^10.4.20",
+    "nodemon": "^3.1.4",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.41",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "alapa": "github:alapajs/alapa",
+    "sqlite3": "^5.1.7"
+  }
+}
