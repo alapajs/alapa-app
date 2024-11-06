@@ -12,10 +12,10 @@
     "start": "node dist/index.js",
     "build": "npm run build:css && npm run webpack && npm run tsc",
     "lint": "eslint src/**/*.ts",
-    "dev:public": "nodemon --watch public --delay  2.5 --exec 'npm run webpack'",
-    "dev:app": "nodemon --watch src --ext 'ts'  --delay 2.5 --exec 'npm run tsc && npm start'",
-    "dev:view": "nodemon --watch views --ext '*' --delay 2.5 --exec 'npm run build:css'",
-    "dev": "NODE_ENV=development npm-run-all --parallel dev:app dev:public"
+    "dev:public": "nodemon --watch public --delay  2.5 --exec npm run webpack",
+    "dev:app": "nodemon --watch src --ext 'ts'  --delay 2.5 --exec \"npm run tsc && npm start\"",
+    "dev:view": "nodemon --watch views --ext '*' --delay 2.5 --exec \"npm run build:css\"",
+    "dev": "npm-run-all --parallel dev:app dev:public"
   },
   "keywords": [],
   "author": "",
