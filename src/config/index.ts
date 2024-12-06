@@ -13,6 +13,7 @@ import { apiConfig } from "./api";
 import { appConfig } from "./apllication";
 import { encryptionConfig } from "./encryption";
 import { viewConfig } from "./view";
+import { storage } from "./storage";
 
 export const config: Configuration = {
   server: serverConfig,
@@ -29,4 +30,5 @@ export const config: Configuration = {
   application: appConfig,
   api: apiConfig,
   encryption: encryptionConfig,
+  storage: storage,
 };

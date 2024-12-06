@@ -7,7 +7,7 @@ yarn-error.log
 logs/
 *.log
 *.log.*
-
+openapi.json
 # Dependency directories
 jspm_packages/
 

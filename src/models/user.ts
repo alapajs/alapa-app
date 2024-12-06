@@ -1,7 +1,15 @@
-import { AuthenticatableModel, ShortDateColumn, TableModel } from "alapa";
+import {
+  AuthenticatableModel,
+  PrimaryColumn,
+  ShortDateColumn,
+  TableModel,
+} from "alapa";
 
 @TableModel()
 export class Users extends AuthenticatableModel {
+  @PrimaryColumn("increment")
+  id: string;
+
   @ShortDateColumn("day")
   day: number;
 

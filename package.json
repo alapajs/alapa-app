@@ -34,7 +34,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "alapa": "github:alapajs/alapa",
     "sqlite3": "^5.1.7"
   }
 }
