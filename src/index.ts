@@ -1,4 +1,4 @@
-import alapa, { Logger } from "alapa";
+import alapa from "alapa";
 import { config } from "./config";
 
-alapa(config).startServer();
+alapa(config).startServer(undefined, 5000);

@@ -10,6 +10,9 @@
     "build:css": "./node_modules/.bin/postcss public/styles/tailwind.css -o static/css/app.css",
     "ts-node": "ts-node --project tsconfig.json src/index.ts",
     "start": "node dist/index.js",
+    "migration:generate": "npx ts-node migration-runner/generate.ts",
+    "migration:run": "npx ts-node migration-runner/run.ts",
+    "migration:revert": "npx ts-node migration:revert -d src/config/database.ts",
     "build": "npm run build:css && npm run webpack && npm run tsc",
     "lint": "eslint src/**/*.ts",
     "dev:public": "nodemon --watch public --delay  2.5 --exec npm run webpack",
@@ -29,11 +32,13 @@
     "postcss-cli": "^11.0.0",
     "tailwindcss": "^3.4.10",
     "ts-node": "^10.9.2",
+    "typeorm": "^0.3.20",
     "typescript": "^5.5.4",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "alapa": "^1.0.8",
     "sqlite3": "^5.1.7"
   }
 }
