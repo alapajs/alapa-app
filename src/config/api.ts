@@ -1,29 +1,34 @@
 import { APIConfiguration } from "alapa";
 
 export const apiConfig: APIConfiguration = {
-  docUrl: "/doc",
-  openapiDefinitionFile: "openapi.json",
-  openApiDefinitions: {
-    openapi: "3.0.1",
-    info: {
-      title: "API Documentation",
-      version: "1.0.0",
-      description: "API documentation for the for take and trade",
-    },
-    components: {
-      securitySchemes: {
-        BasicAuth: {
-          type: "http",
-          scheme: "basic",
-        },
-        BearerAuth: {
-          type: "http",
-          scheme: "bearer",
-        },
-        apiKey: {
-          type: "apiKey",
-          in: "header",
-          name: "X-API-KEY",
+  docs: {
+    schemasDir: process.env.DOCS_SCHEMAS_DIR || "docs/schemas",
+    path: process.env.DOC_PATH || "/docs",
+    sync: process.env.SYNC_DIR === "true",
+    openapiDefinitionFile: "openapi.json",
+    openApiDefinitions: {
+      openapi: "3.0.1",
+      info: {
+        title: "API Documentation",
+        version: "1.0.0",
+        description: "API documentation for Alapa Project.",
+      },
+      components: {
+        securitySchemes: {
+          BasicAuth: {
+            type: "http",
+            scheme: "basic",
+          },
+          BearerAuth: {
+            type: "http",
+            scheme: "bearer",
+            bearerFormat: "JWT",
+          },
+          ApiKeyAuth: {
+            type: "apiKey",
+            in: "header",
+            name: "X-API-KEY",
+          },
         },
       },
     },

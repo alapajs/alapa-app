@@ -10,9 +10,9 @@ import { middlewareConfig } from "./middleware"; // Import middleware configurat
 import { Configuration } from "alapa";
 import { authConfig } from "./auth";
 import { apiConfig } from "./api";
-import { appConfig } from "./apllication";
+import { appConfig } from "./application";
 import { encryptionConfig } from "./encryption";
-import { viewConfig } from "./view";
+import { viewConfig } from "./views";
 import { storage } from "./storage";
 
 export const config: Configuration = {

@@ -7,8 +7,8 @@ import {
 
 @TableModel()
 export class Users extends AuthenticatableModel {
-  @PrimaryColumn("increment")
-  id: string;
+  @PrimaryColumn()
+  id: number;
 
   @ShortDateColumn("day")
   day: number;
