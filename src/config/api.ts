@@ -4,7 +4,7 @@ export const apiConfig: APIConfiguration = {
   docs: {
     schemasDir: process.env.DOCS_SCHEMAS_DIR || "docs/schemas",
     path: process.env.DOC_PATH || "/docs",
-    sync: process.env.SYNC_DIR === "true",
+    sync: process.env.SYNC_DOCS === "true",
     openapiDefinitionFile: "openapi.json",
     openApiDefinitions: {
       openapi: "3.0.1",
