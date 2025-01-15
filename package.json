@@ -16,30 +16,41 @@
     "migration:revert": "npx ts-node migration:revert -d src/config/database.ts",
     "build": "npm run build:css && npm run webpack && npm run tsc",
     "lint": "eslint src/**/*.ts",
-    "dev:public": "nodemon --watch public --delay  2.5 --exec npm run webpack",
-    "dev:app": "nodemon  --signal SIGKILL --watch src  --watch views  --ext '*'  --delay 2.5 --exec \"npm run tsc && npm start\"",
-    "dev:view": "nodemon --watch views --ext '*' --delay 2.5 --exec \"npm run build:css\"",
-    "dev": "npm-run-all --parallel dev:app dev:public"
+    "dev:public": "nodemon --watch public --ext \"*\" --delay  2.5 --exec npm run webpack",
+    "dev:start": "npm run tsc && npm run build:css && npm start",
+    "dev:server": "ts-node ./dev/index.ts",
+    "dev:app": "nodemon  --signal SIGKILL --watch src --watch public  --watch views  --ext \"*\"  --delay 2.5 --exec npm run dev:start",
+    "dev": "npm-run-all --parallel dev:app dev:public dev:server"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/connect-flash": "^0.0.40",
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@types/toastr": "^2.1.43",
     "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "cssnano": "^7.0.6",
+    "mini-css-extract-plugin": "^2.9.2",
     "nodemon": "^3.1.4",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0",
+    "sass": "^1.83.1",
+    "sass-loader": "^16.0.4",
+    "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.10",
     "ts-node": "^10.9.2",
     "typeorm": "^0.3.20",
     "typescript": "^5.5.4",
-    "webpack": "^5.94.0",
+    "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "alapa": "^0.0.1",
-    "sqlite3": "^5.1.7"
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.1.7",
+    "toastr": "^2.1.4"
   }
 }

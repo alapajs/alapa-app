@@ -19,6 +19,7 @@
     "./migrations/**/*.ts",
     "./docs/**/*.ts",
     "./migration-runner/**/*.ts",
-    "./test/**/*.ts"
+    "./test/**/*.ts",
+    "./dev/**/*.ts"
   ]
 }

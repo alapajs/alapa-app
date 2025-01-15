@@ -1,15 +1,19 @@
-import { SessionConfiguration } from "alapa";
+import {
+  randomMd5,
+  RedisSessionStore,
+  MemorySessionStore,
+  SessionConfiguration,
+  DatabaseSessionStore,
+  AnyObject,
+} from "alapa";
+const sessionStore: AnyObject = {
+  memory: MemorySessionStore,
+  redis: RedisSessionStore,
+  database: DatabaseSessionStore,
+};
 
 // Session configuration
 export const sessionConfig: SessionConfiguration = {
-  secret: "your-session-secret",
-  expiresIn: "1h",
-  storage: "redis",
-  redisConfig: {
-    host: "localhost",
-    port: 6379,
-    password: "password",
-  },
-  secure: true,
-  sameSite: "lax",
+  secret: process.env.ENCRYPTION_KEY || randomMd5(),
+  store: sessionStore[process.env.SESSION_STORE || "database"],
 };

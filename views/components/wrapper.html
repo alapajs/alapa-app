@@ -6,11 +6,31 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <title>{{props.title}}</title>
             <link rel="stylesheet" href="{{static('css/app.css')}}"/>
+            <link rel="stylesheet" href="{{static('css/styles.css')}}"/>
             <link rel="icon" type="image/x-icon" href="{{static("images/logo.png")}}">
         </head>
         <body class="bg-gray-100 dark:bg-gray-900  dark:text-gray-300">
             {{{content}}}
         </body>
         <script src="{{ static('js/app.js') }}"></script>
-    </html>
-</component>
+
+        {% const messages = req.flash(); %}
+        {% if (messages) { %}
+            <script>
+                toastr.options.progressBar = true;
+                {% Object.keys(messages).forEach((key)=>{ %}
+                {% const message = messages[key] %}
+                {% for(msg of message){ %}
+                    try {
+                        toastr["{{key}}"]('{{msg}}');
+                    } catch (error) {
+                        console.error(error);
+                    }
+                    {% }}); %}
+            </script>
+            {% } %}
+            {% for (data of containers("script")) { %}
+                {{{data.content}}}
+                {% } %}
+            </html>
+        </component>
