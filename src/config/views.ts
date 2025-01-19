@@ -1,6 +1,6 @@
 import { ViewConfiguration } from "alapa";
 export const viewConfig: ViewConfiguration = {
-  staticFilesPath: "static",
-  dir: "views",
+  staticFilesPath: process.env.STATIC_DIR || "static",
+  dir: process.env.VIEW_DIR || "views",
   extensions: "html",
 };

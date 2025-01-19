@@ -45,8 +45,6 @@ database.db
 package-lock.json
 yarn.lock
 
-# Coverage reports
-coverage/
 *.lcov
 
 # Miscellaneous
