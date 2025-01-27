@@ -12,12 +12,12 @@ import { authConfig } from "./auth";
 import { apiConfig } from "./api";
 import { appConfig } from "./application";
 import { encryptionConfig } from "./encryption";
-import { viewConfig } from "./views";
+import { templateEngineConfig } from "./template-engine";
 import { storage } from "./storage";
 
 export const config: Configuration = {
   server: serverConfig,
-  view: viewConfig,
+  templateEngine: templateEngineConfig,
   database: database,
   logger: loggerConfig,
   email: emailConfig,

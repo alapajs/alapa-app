@@ -4,33 +4,39 @@
         <head>
             <meta charset="UTF-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
             <title>{{props.title}}</title>
+
+            <!-- Stylesheets -->
             <link rel="stylesheet" href="{{static('css/app.css')}}"/>
             <link rel="stylesheet" href="{{static('css/styles.css')}}"/>
-            <link rel="icon" type="image/x-icon" href="{{static("images/logo.png")}}">
+
+            <!-- Favicon -->
+            <link rel="icon" type="image/x-icon" href="{{static('images/logo.png')}}"/>
         </head>
-        <body class="bg-gray-100 dark:bg-gray-900  dark:text-gray-300">
-            {{{content}}}
+
+        <body class="bg-gray-100 dark:bg-gray-900 dark:text-gray-300">
+            <render content/>
         </body>
+
+        <!-- Scripts -->
         <script src="{{ static('js/app.js') }}"></script>
 
         {% const messages = req.flash(); %}
-        {% if (messages) { %}
+        {% if (messages && Object.keys(messages).length > 0) { %}
             <script>
                 toastr.options.progressBar = true;
-                {% Object.keys(messages).forEach((key)=>{ %}
+                {% Object.keys(messages).forEach((key) => { %}
                 {% const message = messages[key] %}
-                {% for(msg of message){ %}
+                {% for (msg of message) { %}
                     try {
                         toastr["{{key}}"]('{{msg}}');
                     } catch (error) {
-                        console.error(error);
+                        console.error('Toastr error: ', error);
                     }
-                    {% }}); %}
+                    {% } %}
+                    {% }) %}
             </script>
             {% } %}
-            {% for (data of containers("script")) { %}
-                {{{data.content}}}
-                {% } %}
-            </html>
-        </component>
+        </html>
+    </component>

@@ -1,8 +1,8 @@
 {% import "./wrapper.html" %}
 {% import "./navbar.html" %}
 <component default Layout>
-    <X:Wrapper title="{{props.title}}">
+    <X:Wrapper :title="props.title">
         <x:NavBar/>
-        {{{content}}}
+        <render content/>
     </X:Wrapper>
 </component>
