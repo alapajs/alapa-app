@@ -8,7 +8,7 @@ export const serverConfig: ServerConfiguration = {
   host: process.env.HOST || "0.0.0.0",
   routes: routes,
   apiRoutes: apiRoute,
-  proxy: false,
+  proxy: true,
   compression: true,
   https: {
     enabled: false,
