@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@types/express": "^5.0.0",
-    "alapa": "^0.0.2-alpha.3",
+    "alapa": "^0.0.2-alpha.4",
     "mysql": "^2.18.1",
     "sqlite3": "^5.1.7",
     "toastr": "^2.1.4"
