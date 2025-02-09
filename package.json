@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "rimraf -rf dist && tsc",
     "webpack": "tsc  --project tsconfig.public.json && webpack",
-    "build:css": "./node_modules/.bin/postcss public/styles/tailwind.css -o static/css/app.css",
+    "build:css": "npx postcss public/styles/tailwind.css -o static/css/app.css",
     "ts-node": "ts-node --project tsconfig.json src/index.ts",
     "start": "node dist/index.js",
     "clean": "rimraf -rf dist",
@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@types/express": "^5.0.0",
-    "alapa": "^0.0.2-alpha.4",
+    "alapa": "^0.0.2-alpha.6",
     "mysql": "^2.18.1",
     "sqlite3": "^5.1.7",
     "toastr": "^2.1.4"
