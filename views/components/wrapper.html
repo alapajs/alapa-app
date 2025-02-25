@@ -30,7 +30,7 @@
                 {% const message = messages[key] %}
                 {% for (msg of message) { %}
                     try {
-                        toastr["{{key}}"]('{{msg}}');
+                        toastr["{{key}}"](`{{msg}}`);
                     } catch (error) {
                         console.error('Toastr error: ', error);
                     }
