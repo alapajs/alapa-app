@@ -1,5 +1,6 @@
 import { Request, Router, Response } from "alapa";
 import { Users } from "../models/user";
+import { PostController } from "./controller";
 const apiRoutes = new Router();
 
 apiRoutes.post("/user", (req: Request, res: Response) => {
@@ -13,6 +14,7 @@ apiRoutes.post("/user", (req: Request, res: Response) => {
     },
   });
 });
+apiRoutes.controller("posts", PostController);
 apiRoutes.get("/users", async (req: Request, res: Response) => {
   const users = Users.find();
   res.api({

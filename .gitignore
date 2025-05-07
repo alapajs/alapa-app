@@ -50,3 +50,4 @@ yarn.lock
 # Miscellaneous
 tmp/
 temp/
+.qodo
