@@ -8,4 +8,5 @@ export const loggerConfig: LoggerConfiguration = {
   format: "text",
   maxFileSize: "10MB",
   maxFiles: 5,
+  requestLogType: process.env.REQUEST_LOG_TYPE || "basic",
 };
