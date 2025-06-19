@@ -1,4 +1,5 @@
 import {
+  AfterLoad,
   AuthenticatableModel,
   PrimaryColumn,
   ShortDateColumn,
@@ -7,7 +8,7 @@ import {
 
 @TableModel()
 export class Users extends AuthenticatableModel {
-  @PrimaryColumn()
+  @PrimaryColumn("increment")
   id: number;
 
   @ShortDateColumn("day")
