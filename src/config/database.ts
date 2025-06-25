@@ -2,6 +2,7 @@ import {
   DatabaseConfiguration,
   DatabaseConnection,
   DatabaseConnectionList,
+  ENV,
   toAbsolutePath,
 } from "alapa";
 
@@ -39,9 +40,12 @@ const connections: DatabaseConnectionList = {
 
 export const databaseConnection =
   connections[process.env.DATABASE_TYPE || "sqlite"];
+
 export const database: DatabaseConfiguration = {
   synchronize: process.env.DB_SYN === "true",
   entities: entities,
   logging: process.env.DB_LOGGING === "true",
   connection: databaseConnection,
+  removeNullValuesFromIncludesAExcludeFields: false,
+  preventSilentlyDiscardingAttributes: ENV == "development",
 };
