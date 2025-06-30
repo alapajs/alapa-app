@@ -4,6 +4,7 @@ import {
   FormattedField,
   FormattedFieldMethod,
   ModelFormattedField,
+  ModelIncludeFields,
   ModelIncludeFieldsMethod,
   PrimaryColumn,
   ShortDateColumn,
@@ -22,7 +23,7 @@ export class Users extends AuthenticatableModel {
   // @FormattedField<Users, "month">(md5)
   month: number;
 
-  @FormattedField<Users, "year">(testEM)
+  @FormattedField<Users, "year","formatId">("formatId")
   @ShortDateColumn("year")
   year: number;
 
@@ -39,11 +40,11 @@ export class Users extends AuthenticatableModel {
     return ["firstName", "email", "lastName", "year"];
   }
 
-  // protected includeFields: ConditionalFieldKey<Users>[] = [
-  //   "firstName",
-  //   "lastName",
-  //   "aboutYourself",
-  // ];
+  protected includeFields: ModelIncludeFields<Users>[] = [
+    "firstName",
+    "lastName",
+    "aboutYourself",
+  ];
 
   protected formattedFields: ModelFormattedField<Users> = {
     aboutYourself: () =>
