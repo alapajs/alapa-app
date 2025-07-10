@@ -6,7 +6,7 @@ A new Alapa project.
 
 This project serves as a starting point for an Alapa application. Follow the steps below to set up and run the project on your local machine.
 
-For help with Alapa development, visit the [online documentation](https://github.com/alapajs/alapa/), which offers tutorials, samples, guidance on web development, and a full API reference.
+For help with Alapa development, visit the [online documentation](https://alapa.dev), which offers tutorials, samples, guidance on web development, and a full API reference.
 
 ## Prerequisites
 
