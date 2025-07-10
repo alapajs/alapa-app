@@ -17,12 +17,11 @@
     "migration:revert": "npx ts-node migration:revert -d src/config/database.ts",
     "build": "npm run build:css && npm run webpack && npm run tsc",
     "lint": "eslint src/**/*.ts",
-    "refresh:template": "node ./dev/refresh.js",
-    "dev:start": "tsc && npm start && npm run refresh:template",
-    "dev:server": "ts-node ./dev/index.ts && npm run refresh:template",
+    "dev:start": "tsc && npm start",
+    "dev:server": "node ./dev/index.js",
     "watch:refresh": "node ./dev/watch-refresh.js",
     "watch:app": "nodemon  --signal SIGKILL --watch src  --ext \"*\"  --delay 0.5 --exec npm run dev:start",
-    "dev": "npm-run-all --parallel dev:server watch:app  watch:refresh"
+    "dev": "npm-run-all --parallel dev:server watch:app watch:refresh"
   },
   "keywords": [],
   "author": "",

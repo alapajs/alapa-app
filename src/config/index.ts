@@ -7,7 +7,7 @@ import { sessionConfig } from "./session";
 import { securityConfig } from "./security";
 import { cacheConfig } from "./cache";
 import { middlewareConfig } from "./middleware"; // Import middleware configuration
-import { Configuration, Model } from "alapa";
+import { Configuration } from "alapa";
 import { authConfig } from "./auth";
 import { apiConfig } from "./api";
 import { appConfig } from "./application";
