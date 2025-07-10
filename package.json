@@ -18,15 +18,11 @@
     "build": "npm run build:css && npm run webpack && npm run tsc",
     "lint": "eslint src/**/*.ts",
     "refresh:template": "node ./dev/refresh.js",
-    "build:dev:css": "npm run build:css",
-    "build:dev:public": "npm run webpack && npm run refresh:template",
-    "dev:start": "npm run tsc && npm start && npm run refresh:template",
+    "dev:start": "tsc && npm start && npm run refresh:template",
     "dev:server": "ts-node ./dev/index.ts && npm run refresh:template",
     "watch:refresh": "node ./dev/watch-refresh.js",
-    "watch:public": "nodemon --watch public --ext \"*\" --delay  2.5 --exec npm run build:dev:public",
-    "watch:view": "nodemon --watch views --ext \"*\" --delay  0.5 --exec npm run build:dev:css",
-    "watch:app": "nodemon  --signal SIGKILL --watch src  --ext \"*\"  --delay 2.5 --exec npm run dev:start",
-    "dev": "npm-run-all --parallel watch:app dev:server watch:refresh watch:public watch:view"
+    "watch:app": "nodemon  --signal SIGKILL --watch src  --ext \"*\"  --delay 0.5 --exec npm run dev:start",
+    "dev": "npm-run-all --parallel dev:server watch:app  watch:refresh"
   },
   "keywords": [],
   "author": "",
@@ -58,7 +54,7 @@
   },
   "dependencies": {
     "@types/express": "^5.0.0",
-    "alapa": "^0.0.2-alpha.14",
+    "alapa": "^0.0.2-alpha.11",
     "sqlite3": "^5.1.7",
     "toastr": "^2.1.4"
   }
