@@ -1,13 +1,10 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require("webpack");
-const { dotenv } = require("alapa");
-dotenv.config();
+require("dotenv").config();
+const { ENV } = require("alapa/dist/shared/constant/environment");
 
-const production =
-  process.env.NODE_ENV == "production" ||
-  process.env.APP_ENV == "production" ||
-  process.env.DEBUG == "false";
+const production = ENV == "production";
 module.exports = {
   entry: "./.alapa/web/index.js", // Make sure this is correct
   output: {

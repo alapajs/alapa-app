@@ -1,3 +1,4 @@
+import "dotenv/config";
 import alapa from "alapa";
 import { config } from "./config";
 

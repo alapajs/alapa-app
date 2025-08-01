@@ -1,9 +1,6 @@
-const { dotenv } = require("alapa");
-dotenv.config();
-const production =
-  process.env.NODE_ENV == "production" ||
-  process.env.APP_ENV == "production" ||
-  process.env.DEBUG == "false";
+require("dotenv").config();
+const { ENV } = require("alapa/dist/shared/constant/environment");
+const production = ENV === "production";
 module.exports = {
   plugins: [
     require("tailwindcss"),

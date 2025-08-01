@@ -12,9 +12,9 @@
     "start": "node dist/index.js",
     "clean": "rimraf -rf dist",
     "generate-docs": "node docs/generate.js",
-    "migration:generate": "npx ts-node migration-runner/generate.ts",
-    "migration:run": "npx ts-node migration-runner/run.ts",
-    "migration:revert": "npx ts-node migration:revert -d src/config/database.ts",
+    "migration:generate": "node migration-runner/generate.js",
+    "migration:run": "node migration-runner/run.js",
+    "migration:revert": "node migration:revert -d dist/config/database.js",
     "build": "npm run build:css && npm run webpack && npm run tsc",
     "lint": "eslint src/**/*.ts",
     "dev:start": "tsc && npm start",
@@ -46,14 +46,13 @@
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.10",
     "ts-node": "^10.9.2",
-    "typeorm": "^0.3.20",
     "typescript": "^5.5.4",
     "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "@types/express": "^5.0.0",
-    "alapa": "^0.0.2-alpha.15",
+    "dotenv": "^17.2.1",
     "sqlite3": "^5.1.7",
     "toastr": "^2.1.4"
   }

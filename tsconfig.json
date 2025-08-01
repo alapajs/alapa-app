@@ -16,9 +16,7 @@
   "include": ["alapa-env.ts", "**/*.ts"],
   "exclude": [
     "./public/**/*.ts",
-    "./migrations/**/*.ts",
     "./docs/**/*.ts",
-    "./migration-runner/**/*.ts",
     "./test/**/*.ts",
     "./dev/**/*.ts"
   ]
