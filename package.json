@@ -8,7 +8,7 @@
     "tsc": "rimraf -rf dist && tsc",
     "webpack": "tsc  --project tsconfig.public.json && webpack",
     "build:css": "npx postcss public/styles/tailwind.css -o static/css/app.css",
-    "ts-node": "ts-node --project tsconfig.json src/index.ts",
+    "dev:start": "ts-node src/index.ts",
     "start": "node dist/index.js",
     "clean": "rimraf -rf dist",
     "generate-docs": "node docs/generate.js",
@@ -17,7 +17,6 @@
     "migration:revert": "node migration:revert -d dist/config/database.js",
     "build": "npm run build:css && npm run webpack && npm run tsc",
     "lint": "eslint src/**/*.ts",
-    "dev:start": "tsc && npm start",
     "dev:server": "node ./dev/index.js",
     "watch:refresh": "node ./dev/watch-refresh.js",
     "watch:app": "nodemon  --signal SIGKILL --watch src  --ext \"*\"  --delay 0.5 --exec npm run dev:start",
@@ -29,6 +28,7 @@
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
+    "@types/express": "^5.0.3",
     "@types/toastr": "^2.1.43",
     "autoprefixer": "^10.4.20",
     "babel-loader": "^9.2.1",
@@ -51,7 +51,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@types/express": "^5.0.0",
+    "alapa": "file:../alapa/alapa-0.0.2-alpha.21.tgz",
     "dotenv": "^17.2.1",
     "sqlite3": "^5.1.7",
     "toastr": "^2.1.4"

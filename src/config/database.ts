@@ -3,10 +3,15 @@ import {
   DatabaseConnection,
   DatabaseConnectionList,
   ENV,
+  RUNTIME_ENVIRONMENT,
   toAbsolutePath,
 } from "alapa";
-
-const entities = ["dist/models**/*.js"];
+const models =
+  RUNTIME_ENVIRONMENT === "javascript"
+    ? "dist/models**/*.js"
+    : "src/models**/*.ts";
+console.log(models, RUNTIME_ENVIRONMENT);
+const entities = [models];
 
 const sqliteConnection: DatabaseConnection = {
   type: "sqlite",

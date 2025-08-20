@@ -11,9 +11,10 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "strictPropertyInitialization": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["alapa/dist/index", "alapa/typing/global"]
   },
-  "include": ["alapa-env.ts", "**/*.ts"],
+  "include": ["alapa-env.d.ts", "**/*.ts"],
   "exclude": [
     "./public/**/*.ts",
     "./docs/**/*.ts",
