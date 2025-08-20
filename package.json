@@ -51,7 +51,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "alapa": "file:../alapa/alapa-0.0.2-alpha.21.tgz",
     "dotenv": "^17.2.1",
     "sqlite3": "^5.1.7",
     "toastr": "^2.1.4"
