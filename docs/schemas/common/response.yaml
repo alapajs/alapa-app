@@ -1,0 +1,10 @@
+SuccessResponse:
+  type: object
+  properties:
+    message:
+      type: string
+      description: A message indicating success
+    status:
+      type: integer
+      description: HTTP status code
+      example: 200

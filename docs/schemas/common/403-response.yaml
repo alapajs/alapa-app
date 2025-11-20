@@ -1,0 +1,11 @@
+ForbiddenResponse:
+  type: object
+  properties:
+    status:
+      type: integer
+      description: The HTTP status code of the response.
+      example: 403
+    message:
+      type: string
+      description: A human-readable description of the error.
+      example: "You do not have permission to perform this action."

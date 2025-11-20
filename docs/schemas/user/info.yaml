@@ -1,0 +1,81 @@
+User:
+  type: object
+  properties:
+    id:
+      type: string
+      description: Unique identifier for the post (MD5 hash)
+    username:
+      type: string
+      nullable: true
+      description: Unique name for user
+
+    email:
+      type: string
+      nullable: true
+      description: Email address of the user
+      format: email
+
+    phoneNumber:
+      type: string
+      nullable: true
+      description: Phone number of the user
+      pattern: ^\+?\d{1,15}$
+
+    status:
+      description: Status of the user (active, suspended, banned)
+      type: string
+      enum: [active, suspended, banned]
+
+    isOnline:
+      type: double
+      nullable: true
+      description: Whether the user is currently online
+      example: true
+
+    isDeleted:
+      type: double
+      nullable: true
+      description: Whether the user has been deleted
+      example: false
+
+    lastLoginAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Timestamp of the user's last login
+      example: "2023-04-30T12:34:56Z"
+
+    profile:
+      $ref: "#/components/schemas/Profile"
+
+    addresses:
+      type: array
+      items:
+        $ref: "#/components/schemas/Address"
+
+    safeZones:
+      type: array
+      items:
+        $ref: "#/components/schemas/SafeZone"
+
+    day:
+      type: integer
+      description: Day the user was created
+    month:
+      type: integer
+      description: Month the user was created
+    year:
+      type: integer
+      description: Year the user was created
+    createdAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Timestamp of the user's creation
+      example: "2023-04-30T12:34:56Z"
+    updatedAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Timestamp of the user's last update
+      example: "2023-04-30T12:34:56Z"

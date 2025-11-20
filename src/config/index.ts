@@ -14,6 +14,7 @@ import { appConfig } from "./application";
 import { encryptionConfig } from "./encryption";
 import { templateEngineConfig } from "./template-engine";
 import { storage } from "./storage";
+import { brokerConfig } from "./broker";
 
 export const config: Configuration = {
   server: serverConfig,
@@ -31,4 +32,5 @@ export const config: Configuration = {
   api: apiConfig,
   encryption: encryptionConfig,
   storage: storage,
+  broker: brokerConfig,
 };

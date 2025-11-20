@@ -1,0 +1,10 @@
+BadRequestResponse:
+  type: object
+  properties:
+    status:
+      type: integer
+      description: The HTTP status code of the response.
+      example: 400
+    message:
+      type: string
+      description: A human-readable description of what caused the bad request.

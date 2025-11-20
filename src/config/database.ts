@@ -1,7 +1,7 @@
 import {
   DatabaseConfiguration,
-  DatabaseConnection,
   DatabaseConnectionList,
+  DataSourceOptions,
   ENV,
   RUNTIME_ENVIRONMENT,
   toAbsolutePath,
@@ -13,12 +13,12 @@ const models =
 console.log(models, RUNTIME_ENVIRONMENT);
 const entities = [models];
 
-const sqliteConnection: DatabaseConnection = {
+const sqliteConnection: DataSourceOptions = {
   type: "sqlite",
   database: toAbsolutePath("database.db"),
 };
 
-const postgresConnection: DatabaseConnection = {
+const postgresConnection: DataSourceOptions = {
   type: "postgres",
   host: process.env.DB_HOST || "localhost",
   port: parseInt(process.env.DB_PORT || "5432"),
@@ -28,7 +28,7 @@ const postgresConnection: DatabaseConnection = {
   ssl: { rejectUnauthorized: process.env.DB_SSL == "true" },
 };
 
-const mysqlConnection: DatabaseConnection = {
+const mysqlConnection: DataSourceOptions = {
   type: "mysql",
   host: process.env.DB_HOST || "localhost",
   port: parseInt(process.env.DB_PORT || "3306"),

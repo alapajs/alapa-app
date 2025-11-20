@@ -1,0 +1,37 @@
+CreateUser:
+  type: object
+  properties:
+    email:
+      type: string
+      description: Email address of the user
+      example: john@example.com
+
+    phoneNumber:
+      type: string
+      description: Phone number of the user
+      example: 0801111111
+
+    password:
+      type: string
+      description: Password of the user
+      example: pass123
+
+    confirmPassword:
+      type: string
+      description: Confirm password of the user
+      example: pass123
+
+    firstName:
+      type: string
+      description: First name of the user
+      example: John
+
+    lastName:
+      type: string
+      description: Last name of the user
+      example: Doe
+
+    middleName:
+      type: string
+      description: Middle name of the user
+      example: Smith

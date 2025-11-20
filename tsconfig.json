@@ -7,14 +7,26 @@
     "rootDir": "./src",
     "resolveJsonModule": true,
     "outDir": "./dist",
+    "baseUrl": "./",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
-    "types": ["alapa/dist/index", "alapa/typing/global"]
+    "types": ["alapa/dist/index", "alapa/typing/global"],
+    "paths": {
+      "@models/*": ["src/models/*"],
+      "models/*": ["src/models/*"],
+      "@api/*": ["src/api/*"],
+      "@app/*": ["src/app/*"],
+      "@/*": ["/*"]
+    }
   },
-  "include": ["alapa-env.d.ts", "**/*.ts"],
+  "include": [
+    "alapa-env.d.ts",
+    "**/*.ts",
+    "../alapa/src/services/broker/init.ts"
+  ],
   "exclude": [
     "./public/**/*.ts",
     "./docs/**/*.ts",

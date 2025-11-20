@@ -1,0 +1,11 @@
+UnauthorizedResponse:
+  type: object
+  properties:
+    status:
+      type: integer
+      description: The HTTP status code of the response.
+      example: 401
+    message:
+      type: string
+      description: A human-readable description of the error.
+      example: You are not authorized to access this resource.

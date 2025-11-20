@@ -1,0 +1,40 @@
+UpdateComment:
+  type: object
+  properties:
+    title:
+      type: string
+      description: Title of the song
+    artist:
+      type: string
+      description: Artist or band name
+    album:
+      type: string
+      description: The album the song belongs to
+    genre:
+      type: string
+      description: Genre of the song
+    releaseDate:
+      type: string
+      format: date
+      description: Release date of the song
+    releaseYear:
+      type: integer
+      description: The year the song was released
+    lyric:
+      type: string
+      description: Lyrics of the song
+    label:
+      type: string
+      description: The record label of the song
+    copyright:
+      type: string
+      description: Copyright information for the song
+    language:
+      type: string
+      description: Language of the song
+    description:
+      type: string
+      description: Additional description about the song
+    active:
+      type: boolean
+      description: Whether the song entry is still active or not

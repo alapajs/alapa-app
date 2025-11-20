@@ -52,7 +52,18 @@
   },
   "dependencies": {
     "dotenv": "^17.2.1",
+    "ioredis": "^5.8.2",
+    "kafkajs": "^2.2.4",
+    "module-alias": "^2.2.3",
     "sqlite3": "^5.1.7",
     "toastr": "^2.1.4"
+  },
+  "_moduleAliases": {
+    "@models": "src/models",
+    "@api": "src/api",
+    "@app": "src/app",
+    "@middleware": "src/middleware",
+    "@service": "src/service",
+    "@shared": "src/shared"
   }
 }

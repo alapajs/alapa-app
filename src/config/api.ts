@@ -6,6 +6,9 @@ export const apiConfig: APIConfiguration = {
     path: process.env.DOC_PATH || "/docs",
     sync: process.env.SYNC_DOCS === "true",
     openapiDefinitionFile: "openapi.json",
+    useBasicAuth: process.env.DOCS_USE_BASIC_AUTH === "true",
+    basicAuthUser: process.env.DOCS_BASIC_AUTH_USER || "user",
+    basicAuthPassword: process.env.DOCS_BASIC_AUTH_PASSWORD || "pass",
     openApiDefinitions: {
       openapi: "3.0.1",
       info: {
