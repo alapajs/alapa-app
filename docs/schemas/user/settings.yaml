@@ -1,0 +1,115 @@
+UserSettings:
+  type: object
+  properties:
+    id:
+      type: string
+      description: Unique identifier for settings (MD5)
+
+    # Security
+    isTwoFactorEnabled:
+      type: boolean
+      nullable: true
+      description: Whether 2FA is enabled
+
+    otpSecret:
+      type: string
+      nullable: true
+      description: Secret used for OTP
+
+    twoFactorRecoveryCodes:
+      type: string
+      nullable: true
+      description: Recovery codes for 2FA
+
+    lastPasswordChangeAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Timestamp of last password update
+
+    # Preferences
+    languagePreference:
+      type: string
+      nullable: true
+      description: Preferred language
+
+    timezone:
+      type: string
+      nullable: true
+      description: User's timezone
+
+    preferredContactMethod:
+      type: string
+      nullable: true
+      description: How user prefers communication
+
+    subscriptionStatus:
+      type: string
+      nullable: true
+      description: Subscription state (free, premium)
+
+    subscriptionPlan:
+      type: string
+      nullable: true
+      description: Subscription plan (basic, enterprise)
+
+    # Notifications
+    isEmailNotificationsEnabled:
+      type: boolean
+      nullable: true
+      description: Email notifications on/off
+
+    pushNotificationsEnabled:
+      type: boolean
+      nullable: true
+      description: Push notifications on/off
+
+    phoneOptIn:
+      type: boolean
+      nullable: true
+      description: Allowed phone notifications
+
+    emailOptIn:
+      type: boolean
+      nullable: true
+      description: Allowed email marketing
+
+    marketingOptIn:
+      type: boolean
+      nullable: true
+      description: Subscribed to marketing messages
+
+    mobileAppInstalled:
+      type: boolean
+      nullable: true
+      description: Has installed mobile app
+
+    lastNotificationSeenAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Last notification viewed at
+
+    # Legal
+    termsAcceptedAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: When TOS was accepted
+
+    privacyPolicyAcceptedAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: When privacy policy was accepted
+
+    # Support
+    feedbackGiven:
+      type: boolean
+      nullable: true
+      description: Whether user provided feedback
+
+    customerSupportTicketCount:
+      type: integer
+      nullable: true
+      description: Total raised tickets

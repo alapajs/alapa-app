@@ -1,0 +1,83 @@
+UserProfile:
+  type: object
+  properties:
+    id:
+      type: string
+      description: Unique identifier for the profile (MD5)
+
+    firstName:
+      type: string
+      nullable: true
+      description: User’s first name
+
+    lastName:
+      type: string
+      nullable: true
+      description: User’s last name
+
+    middleName:
+      type: string
+      nullable: true
+      description: User’s middle name
+
+    gender:
+      type: string
+      nullable: true
+      description: Gender of the user
+
+    country:
+      type: string
+      nullable: true
+      description: Country of residence
+
+    address:
+      type: string
+      nullable: true
+      description: User address
+
+    profilePicture:
+      type: string
+      nullable: true
+      description: Profile image URL
+
+    dateOfBirth:
+      type: string
+      format: date
+      nullable: true
+      description: Date of birth
+
+    socialMediaLinks:
+      type: string
+      nullable: true
+      description: Comma-separated list of social media links
+
+    aboutYourself:
+      type: string
+      nullable: true
+      description: Bio or personal description
+
+    websiteUrl:
+      type: string
+      nullable: true
+      description: Personal or business website
+
+    lastActivityAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Last activity timestamp
+
+    status:
+      type: string
+      nullable: true
+      description: User account status (active, suspended)
+
+    blockReason:
+      type: string
+      nullable: true
+      description: Reason user was blocked
+
+    isVIP:
+      type: boolean
+      nullable: true
+      description: Whether the user is VIP

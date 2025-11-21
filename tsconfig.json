@@ -22,11 +22,7 @@
       "@/*": ["/*"]
     }
   },
-  "include": [
-    "alapa-env.d.ts",
-    "**/*.ts",
-    "../alapa/src/services/broker/init.ts"
-  ],
+  "include": ["alapa-env.d.ts", "**/*.ts"],
   "exclude": [
     "./public/**/*.ts",
     "./docs/**/*.ts",

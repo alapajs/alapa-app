@@ -19,7 +19,7 @@
     "lint": "eslint src/**/*.ts",
     "dev:server": "node ./dev/index.js",
     "watch:refresh": "node ./dev/watch-refresh.js",
-    "watch:app": "nodemon  --signal SIGKILL --watch src  --ext \"*\"  --delay 0.5 --exec npm run dev:start",
+    "watch:app": "nodemon  --signal SIGKILL --watch src --watch docs  --ext \"*\"  --delay 0.5 --exec npm run dev:start",
     "dev": "npm-run-all --parallel webpack dev:server watch:app watch:refresh"
   },
   "keywords": [],

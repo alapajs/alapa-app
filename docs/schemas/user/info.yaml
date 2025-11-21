@@ -3,11 +3,12 @@ User:
   properties:
     id:
       type: string
-      description: Unique identifier for the post (MD5 hash)
+      description: Unique identifier for the user (MD5 hash)
+
     username:
       type: string
       nullable: true
-      description: Unique name for user
+      description: Unique username for the user
 
     email:
       type: string
@@ -21,61 +22,102 @@ User:
       description: Phone number of the user
       pattern: ^\+?\d{1,15}$
 
-    status:
-      description: Status of the user (active, suspended, banned)
+    role:
       type: string
-      enum: [active, suspended, banned]
+      description: User role
+      enum: [admin, user, moderator]
 
-    isOnline:
-      type: double
+    isActive:
+      type: boolean
       nullable: true
-      description: Whether the user is currently online
-      example: true
+      description: Whether the user account is active
 
-    isDeleted:
-      type: double
+    emailVerified:
+      type: boolean
       nullable: true
-      description: Whether the user has been deleted
-      example: false
+      description: Whether the user has verified email
 
     lastLoginAt:
       type: string
       format: date-time
       nullable: true
       description: Timestamp of the user's last login
-      example: "2023-04-30T12:34:56Z"
+
+    failedLoginAttempts:
+      type: integer
+      nullable: true
+      description: Number of failed login attempts
+
+    lockoutExpiresAt:
+      type: string
+      format: date-time
+      nullable: true
+      description: Account lockout expiration timestamp
+
+    accountLockedUntil:
+      type: string
+      format: date-time
+      nullable: true
+      description: When the user account will be unlocked
+
+    externalAuthProvider:
+      type: string
+      nullable: true
+      description: External auth provider (google, facebook)
+
+    externalAuthId:
+      type: string
+      nullable: true
+      description: Provider user ID
+
+    referralCode:
+      type: string
+      nullable: true
+      description: User’s referral code
+
+    referredBy:
+      type: string
+      nullable: true
+      description: Who referred the user
+
+    isVerified:
+      type: boolean
+      nullable: true
+      description: If account is verified
+
+    accountVerificationStatus:
+      type: string
+      nullable: true
+      description: Verification state (pending, verified, rejected)
+
+    loginMethod:
+      type: string
+      nullable: true
+      description: Login method used (email, google)
+
+    accountType:
+      type: string
+      enum: [personal, business]
+      description: Account category
 
     profile:
-      $ref: "#/components/schemas/Profile"
+      $ref: "#/components/schemas/UserProfile"
 
-    addresses:
-      type: array
-      items:
-        $ref: "#/components/schemas/Address"
+    settings:
+      $ref: "#/components/schemas/UserSettings"
 
-    safeZones:
-      type: array
-      items:
-        $ref: "#/components/schemas/SafeZone"
-
-    day:
-      type: integer
-      description: Day the user was created
-    month:
-      type: integer
-      description: Month the user was created
-    year:
-      type: integer
-      description: Year the user was created
     createdAt:
       type: string
       format: date-time
-      nullable: true
-      description: Timestamp of the user's creation
-      example: "2023-04-30T12:34:56Z"
+      description: Account creation timestamp
+
     updatedAt:
       type: string
       format: date-time
+      description: Account update timestamp
+
+    deletedAt:
+      type: string
+      format: date-time
       nullable: true
-      description: Timestamp of the user's last update
-      example: "2023-04-30T12:34:56Z"
+      description: Soft delete timestamp
