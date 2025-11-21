@@ -5,6 +5,7 @@ import { Users } from "./Users";
 export class UserSettings extends Model {
   @PrimaryColumn("uuid")
   id: string;
+
   // Security
   @NullColumn()
   isTwoFactorEnabled: boolean;

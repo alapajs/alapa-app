@@ -64,6 +64,20 @@
     "@app": "src/app",
     "@middleware": "src/middleware",
     "@service": "src/service",
-    "@shared": "src/shared"
+    "@shared": "src/shared",
+    "@utils": "src/utils",
+    "@config": "src/config",
+    "@controllers": "src/controllers",
+    "@routes": "src/routes",
+    "@interfaces": "src/interfaces",
+    "@repositories": "src/repositories",
+    "@database": "src/database",
+    "@events": "src/events",
+    "@workers": "src/workers",
+    "@queues": "src/queues",
+    "@bootstrap": "src/bootstrap",
+    "@core": "src/core",
+    "@constants": "src/constants",
+    "@errors": "src/errors"
   }
 }

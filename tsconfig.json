@@ -16,10 +16,25 @@
     "types": ["alapa/dist/index", "alapa/typing/global"],
     "paths": {
       "@models/*": ["src/models/*"],
-      "models/*": ["src/models/*"],
       "@api/*": ["src/api/*"],
       "@app/*": ["src/app/*"],
-      "@/*": ["/*"]
+      "@middleware/*": ["src/middleware/*"],
+      "@utils/*": ["src/utils/*"],
+      "@config/*": ["src/config/*"],
+      "@services/*": ["src/services/*"],
+      "@shared/*": ["src/shared/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@routes/*": ["src/routes/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@repositories/*": ["src/repositories/*"],
+      "@database/*": ["src/database/*"],
+      "@events/*": ["src/events/*"],
+      "@workers/*": ["src/workers/*"],
+      "@queues/*": ["src/queues/*"],
+      "@bootstrap/*": ["src/bootstrap/*"],
+      "@core/*": ["src/core/*"],
+      "@constants/*": ["src/constants/*"],
+      "@errors/*": ["src/errors/*"]
     }
   },
   "include": ["alapa-env.d.ts", "**/*.ts"],
