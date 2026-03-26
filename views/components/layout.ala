@@ -1,5 +1,5 @@
-{% import "./wrapper.html" %}
-{% import "./navbar.html" %}
+{% import "./wrapper" %}
+{% import "./navbar" %}
 <component default Layout>
     <X:Wrapper :title="props.title">
         <x:NavBar/>

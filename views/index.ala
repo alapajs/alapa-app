@@ -1,25 +1,113 @@
-{% import '/components/layout'; import '/components/button.html' %}
+{% import '/components/layout'; import '/components/button' %}
 <X:Layout title="Alapa" required checked>
   <div
     style="
       text-align: center;
-      padding: 100px 20px;
-      font-family: &quot;Arial&quot;, sans-serif;
+      padding: 20px 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      min-height: 100vh;
     "
   >
-    <h1 style="font-size: 3em; margin-bottom: 20px">Welcome to Alapa!</h1>
-    <p style="font-size: 1.5em; margin-bottom: 20px">
-      You're just a step away from transforming your ideas into powerful
-      applications.
+    <!-- Header -->
+    <h2 style="font-size: 3em; margin-bottom: 5px;">
+      Welcome to Alapa 🚀
+    </h2>
+
+    <p style="font-size: 1.3em; opacity: 0.8; margin-bottom: 5px;">
+      Build fast. Think faster.
     </p>
-    <p
-      class="powerful"
-      style="font-size: 1.8em; color: #ffd700; margin-bottom: 30px"
+
+    <p style="font-size: 1.1em; color: #38bdf8; margin-bottom: 40px;">
+      ⚡ 10x faster than love
+    </p>
+
+    <!-- Cheeky Law Card -->
+    <div
+      style="
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      "
     >
-      Unleash Your Creativity with Alapa!
-    </p>
-    <a target="doc" href="https://alapa.dev/docs">
-      <X:Button>Documentations</X:Button>
-    </a>
+      <h2 style="margin-bottom: 15px;">
+        Law of Romantic Gravitation (Unofficial 😏)
+      </h2>
+
+      <p style="font-size: 1.05em; margin-bottom: 15px; opacity: 0.85;">
+        The force of attraction between two consenting adults is directly proportional 
+        to the product of their ages, and inversely proportional to both their 
+        distance apart and their resistance to temptation. Focus on code to keep the system stable.
+      </p>
+
+      <p style="font-size: 0.95em; opacity: 0.6; margin-bottom: 20px;">
+        In high-pressure developer environments, distractions reduce efficiency. The stronger the focus, the faster the build.
+      </p>
+
+      <!-- MathML Formula -->
+      <div style="font-size: 1.8em; margin: 20px 0;">
+        <math display="block">
+          <mi>F</mi>
+          <mo>=</mo>
+          <mi>k</mi>
+          <mo>·</mo>
+          <mfrac>
+            <mrow>
+              <mi>M</mi><mi>a</mi>
+              <mo>×</mo>
+              <mi>F</mi><mi>a</mi>
+            </mrow>
+            <mrow>
+              <mi>D</mi>
+              <mo>×</mo>
+              <mi>T</mi>
+            </mrow>
+          </mfrac>
+        </math>
+      </div>
+
+      <div style="text-align: left; margin-top: 10px; font-size: 0.9em; opacity: 0.75;">
+        <p><strong>F</strong> = Force of attraction 😏</p>
+        <p><strong>Ma</strong> = Man's Age</p>
+        <p><strong>Fa</strong> = Woman's Age</p>
+        <p><strong>D</strong> = Distance apart</p>
+        <p><strong>T</strong> = Temptation resistance (focus, discipline, deadlines)</p>
+        <p><strong>k</strong> = Vibes constant (unstable in production)</p>
+      </div>
+
+      <!-- Dev Joke Footer -->
+      <p style="margin-top: 20px; font-size: 0.85em; opacity: 0.5;">
+        ⚠️ Warning: At D → 0 and T → 0, system behavior becomes unpredictable.
+      </p>
+
+      <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.5;">
+        Recommended: Increase T (focus on code) to maintain maximum efficiency.
+      </p>
+    </div>
+
+    <!-- Fake CLI & Benchmark Fun -->
+    <div style="margin-top: 40px; font-family: monospace; opacity: 0.8;">
+      <p>$ alapa init my-app</p>
+      <p style="opacity: 0.6;">✔ Project created in 0.3ms</p>
+      <p style="opacity: 0.4;">✔ Distractions minimized</p>
+
+      <p style="margin-top: 20px;">$ alapa build --no-distractions</p>
+      <p style="opacity: 0.6;">✔ Build completed in 0.7ms</p>
+      <p style="opacity: 0.5;">✔ Focus level: 100%</p>
+
+      <p style="margin-top: 20px; color: #38bdf8;">⚡ Handles 1M requests/sec, 0 emotional baggage/sec</p>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top: 50px;">
+      <a target="doc" href="https://alapa.dev/docs">
+        <X:Button>Read the Docs</X:Button>
+      </a>
+    </div>
   </div>
 </X:Layout>
