@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>404 — {{process.env.APP_NAME ?? "Alapa App"}} Not Found</title>
+    <title>404 — {{ process.env.APP_NAME ?? "Alapa App" }} Not Found</title>
     <meta
       name="description"
       content="404 — The page you're looking for has drifted into the nebula."
@@ -400,7 +400,7 @@
           </div>
           <div>
             <p class="sub" id="title">
-              404 — {{process.env.APP_NAME ?? "Alapa App"}} Not Found
+              404 — {{ process.env.APP_NAME ?? "Alapa App" }} Not Found
             </p>
             <p style="margin: 0; font-size: 13px; color: var(--muted)">
               The page you were navigating to drifted beyond our map.

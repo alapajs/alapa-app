@@ -12,16 +12,16 @@ console.log(adapter);
 
 export const brokerConfig: BrokerConfiguration = {
   adapter: adapter,
-  host: "localhost",
-  port: 5672,
-  username: "guest",
-  password: "guest",
-  virtualHost: "/",
-  ssl: false,
-  enabled: true,
+  host: process.env.BROKER_HOST || "localhost",
+  port: Number(process.env.BROKER_PORT) || 5672,
+  username: process.env.BROKER_USERNAME || "guest",
+  password: process.env.BROKER_PASSWORD || "guest",
+  virtualHost: process.env.BROKER_VIRTUAL_HOST || "/",
+  ssl: process.env.BROKER_SSL === "true",
+  enabled: process.env.BROKER_ENABLED === "true",
 
-  url: "amqp://guest:guest@localhost:5672/",
-  protocol: "amqp",
+  url: process.env.BROKER_URL || "amqp://guest:guest@localhost:5672/",
+  protocol: process.env.BROKER_PROTOCOL || "amqp",
 
   headers: {
     "x-custom-header": "dummy-header",
