@@ -8,9 +8,4 @@ export const securityConfig: SecurityConfiguration = {
   contentSecurityPolicy:
     process.env.CONTENT_SECURITY_POLICY || "default-src 'self';",
   hsts: process.env.HSTS === "true",
-  rateLimit: {
-    windowMs: Number(process.env.RATE_LIMIT_WINDOW_MS) || 60000, // 1 minute
-    max: Number(process.env.RATE_LIMIT_MAX) || 100, // 100 requests per minute
-    whitelist: process.env.RATE_LIMIT_WHITELIST?.split(",") || ["127.0.0.1"],
-  },
 };

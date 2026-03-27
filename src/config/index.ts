@@ -15,7 +15,7 @@ import { encryptionConfig } from "./encryption";
 import { templateEngineConfig } from "./template-engine";
 import { storage } from "./storage";
 import { brokerConfig } from "./broker";
-
+import { rateLimitConfig } from "./rate-limit";
 export const config: Configuration = {
   server: serverConfig,
   templateEngine: templateEngineConfig,
@@ -33,4 +33,5 @@ export const config: Configuration = {
   encryption: encryptionConfig,
   storage: storage,
   broker: brokerConfig,
+  rateLimit: rateLimitConfig,
 };
